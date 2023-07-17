@@ -5,15 +5,21 @@ function Footer() {
   
   return (
     <>
-      <Container style={{backgroundColor:"#BDA693"}} className="py-5" fluid>
-        <Row>
-          <Col>
-            <p>copyright@all rights are reserved.</p>
-          </Col>
-        </Row>
+      <Container
+        style={{backgroundColor: "#BDA693"}}
+        className="py-5"
+        fluid
+      >
+        <Container>
+          <Row>
+            <Col>
+              <p>copyright@all rights are reserved.</p>
+            </Col>
+          </Row>
+        </Container>
       </Container>
     </>
-  )
+  );
 }
 
 export default Footer;

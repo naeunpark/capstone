@@ -9,9 +9,17 @@ function Cart() {
 
   return (
     <>
-    <Header />
-    <Container style={{backgroundImage: `url(${bedroom}`, backgroundPosition: 'center', backgroundSize:'cover' }} className='text-center py-5' fluid>
-        <Row className='py-5'>
+      <Header />
+      <Container
+        style={{
+          backgroundImage: `url(${bedroom}`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+        className="text-center py-5"
+        fluid
+      >
+        <Row className="py-5">
           <Col>
             <h1>Cart</h1>
           </Col>
@@ -19,19 +27,23 @@ function Cart() {
       </Container>
 
       <Container>
-        <Row>
-
-        </Row>
+        <Row></Row>
       </Container>
 
       <Container>
-        <Row className='py-5'>
-          <Link id="checkOut" to="/checkout" style={{backgroundColor: "#9D7B5F", border: "none"}}>Check out</Link>
+        <Row className="py-5">
+          <Link
+            id="checkOut"
+            className="btn"
+            to="/checkout"
+            style={{backgroundColor: "#9D7B5F", border: "none"}}
+          >
+            Check out
+          </Link>
         </Row>
       </Container>
-
     </>
-  )
+  );
 }
 
 export default Cart
