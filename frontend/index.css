@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #BDA693;
+}
+.btn {
+    background-color: val(--primary-color);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.css-1bhi0za-MuiTypography-root-MuiLink-root {
+    text-decoration: none;
+}

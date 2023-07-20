@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from 'react';
 import { productsStore } from './hooks/productStore.js'
 import ProductCard from './componants/product/ProductCard';
-import Header from './componants/public/Header.jsx'
+import Header from "./componants/public/Nav.jsx";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

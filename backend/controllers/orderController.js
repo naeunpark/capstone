@@ -1,6 +1,20 @@
 import Models from "../models/index.js";
 import { Op } from "sequelize";
 
+const getOrder = (req, res) => {
+  const userId = req.params.userId;
+  console.log(req.params)
+  Models.Orders.findAll({where:{
+    userId: userId
+  }})
+  .then((data)=>{
+  res.send({result:200, data:data})
+  })
+  .catch(error => {
+    throw error
+  })
+}
+
 //[Op.and]: [{ a: 5 }, { b: 6 }],
 const getOrderitmebyOrderId = (req, res) => {
   let orderDetail = "";
@@ -22,14 +36,14 @@ const getOrderitmebyOrderId = (req, res) => {
     })
 }
 
-const createOrder = (data, res) => {
-    Models.Orders.create(data)
+const createOrder = (req, res) => {
+    Models.Orders.create(req.body)
     .then((data)=>res.send({result: 200, data: data}))
     .catch(error => {throw error})
 }
 
-const createOrderItem = (data, res) => {
-    Models.Orderitem.create(data)
+const createOrderItem = (req, res) => {
+    Models.Orderitem.create(req.body)
     .then((data)=>res.send({result: 200, data: data}))
     .catch(error => {throw error})
 }
@@ -74,7 +88,7 @@ const deleteOrder = (data, res) => {
 }
 
 const Controllers = {
-    getOrderitmebyOrderId, createOrder, createOrderItem, updateOrder, updateOrderItem,
+  getOrder, getOrderitmebyOrderId, createOrder, createOrderItem, updateOrder, updateOrderItem,
     deleteOrder, deleteOrderItem
 }
 

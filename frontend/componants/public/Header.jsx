@@ -1,38 +1,26 @@
-import { useIsLoggedIn } from "../../hooks/isLoggedIn";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Image from 'react-bootstrap/Image';
-import logo from '../../assets/logo.png';
+import {Col, Container, Row} from "react-bootstrap";
+import bedroom from "../../assets/bedroom.jpg";
 
-function Header() {
-
-  const islogin = useIsLoggedIn();
-  
+function Header(props) {
   return (
     <>
-        <Navbar collapseOnSelect expand="lg" className="">
-      <Container>
-        <Navbar.Brand href="/"><Image src={logo} width={200}/></Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/shop">Shop</Nav.Link>
-            <Nav.Link href="/contacts">Contacts</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href={islogin? 'sign-out':'sign-in'}>{islogin? 'Sign out':'Sign in'}</Nav.Link>
-            <Nav.Link href="/cart">
-              Cart
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+      <Container
+        style={{
+          backgroundImage: `url(${bedroom}`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+        className="text-center py-5"
+        fluid
+      >
+        <Row className="py-5">
+          <Col>
+            <h1>{props.name}</h1>
+          </Col>
+        </Row>
       </Container>
-    </Navbar>
     </>
-  )
+  );
 }
 
 export default Header;

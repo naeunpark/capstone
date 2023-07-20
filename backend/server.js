@@ -5,8 +5,11 @@ import session from 'express-session';
 import cors from 'cors';
 import dbConnect from "./config/dbConnect.js";
 import Routers from './routes/index.js';
+import { Route } from 'react-router-dom';
 
 const app = express();
+app.use(express.json());
+
 dbConnect.connectMysql();
 
 const corsOptions = {
@@ -16,7 +19,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.json());
 
 // Session setting
 app.use(session({
@@ -33,7 +35,7 @@ app.use(session({
 // middleware to test if authenticated
 const requireAuth = (req, res, next) => {
     const {user} = req.session;
-    console.log(`Check working: ${req.session}`);
+    console.log('Session ID:', req.session.id)
     if(!user){
         return res.status(401).json({message: 'Unauthorized'})
     }
@@ -47,17 +49,16 @@ const requireAdmin = (req, res, next) => {
     next();
 }
 
-app.get("/", (req, res)=>{console.log(req.session.user); res.send("hello");});
 //Router
 app.use("/upload", express.static("upload"));
 app.use("/api/auth", Routers.authRouter);
 app.use("/api/user", requireAuth, Routers.userRouter);
 app.use("/api/category", Routers.categoryRouter);
 app.use("/api/product", Routers.productRouter);
-app.use("/api/review", Routers.reviewRouter);
+app.use("/api/review", requireAuth, Routers.reviewRouter);
 app.use("/api/cart", Routers.cartRouter);
-app.use("/api/order", Routers.orderRouter);
-app.use("/admin", requireAdmin, Routers.adminRouter);
+app.use("/api/order", requireAuth, Routers.orderRouter);
+app.use("/admin", Routers.adminRouter);
 
 const PORT = 8080;
 app.listen(PORT, () =>{

@@ -11,6 +11,7 @@ const getUser = (res) => {
 }
 
 const getUserById = (req, res) => {
+    console.log(req.params.userId);
     Models.User.findByPk(req.params.userId)
     .then((data) => {
         res.send({result: 200, data: data})
@@ -20,9 +21,9 @@ const getUserById = (req, res) => {
     })
 }
 
-const updateUser = (data, res) => {
-    console.log(data);
-    Models.User.update(data,{where: {id:data.id}})
+const updateUser = (req, res) => {
+    console.log(req.body);
+    Models.User.update(req.body,{where: {id:req.params.id}})
     .then((data)=>res.send({result: 200, data: data}))
     .catch(error => {throw error})
 }

@@ -5,10 +5,10 @@ export function useIsLoggedIn() {
 
     const [ islogin, setIsLogin ] = useState(null);
     
-    useEffect(()=>{
-        let userExist = localStorage.getItem("session");
-        (userExist) ? setIsLogin(true) : setIsLogin(false);
-      }, [islogin]);
+    useEffect(() => {
+      let userExist = localStorage.getItem("session");
+      userExist ? setIsLogin(true) : setIsLogin(false);
+    }, []);
       
       return islogin;
 }

@@ -26,6 +26,12 @@ Orders.init({
     },
     orderStatus: {
         type: DataTypes.STRING, allowNull: false
+    },
+    firstName: {
+        type: DataTypes.STRING
+    },
+    lastName: {
+        type: DataTypes.STRING
     }
 }
 ,{
