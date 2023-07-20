@@ -7,10 +7,11 @@ This is the project made for IOD capstone project in 2023.
 
 This project is made by below lists of framework and plugins.
 
-* [![React][React.js]][React-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![Node][Node.org]][Node-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* react
+* node
+* express
+* sequelize
+* mysql2
 
 <!-- GETTING STARTED -->
 ## Getting Started
