@@ -5,11 +5,12 @@ This is the project made for IOD capstone project in 2023.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This project is made by below lists of framework and plugins.
 
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Node][nodejs.org/docs/latest-v18.x/api/]][https://nodejs.org/static/images/logo.svg]
+* [![Express][expressjs.com]][https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png]
 
 <!-- GETTING STARTED -->
 ## Getting Started
