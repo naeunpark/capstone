@@ -9,8 +9,8 @@ This project is made by below lists of framework and plugins.
 
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![Node][nodejs.org/docs/latest-v18.x/api/]][https://nodejs.org/static/images/logo.svg]
-* [![Express][expressjs.com]][https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png]
+* [![Node][https://nodejs.org/docs/latest-v18.x/api/]][https://nodejs.org/static/images/logo.svg]
+* [![Express][https://expressjs.com]][https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png]
 
 <!-- GETTING STARTED -->
 ## Getting Started
