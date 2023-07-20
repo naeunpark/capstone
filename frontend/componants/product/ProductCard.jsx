@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import { Col } from 'react-bootstrap';
-
+import sofa from "../../assets/leather-sofa.jpg";
 export default function ProductCard(props) {
   return (
     <Col
@@ -20,7 +20,7 @@ export default function ProductCard(props) {
             component="img"
             alt={props.product.name}
             height="140"
-            image=""
+            image={sofa}
           />
           <CardContent>
             <Typography

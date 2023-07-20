@@ -6,6 +6,7 @@ import ControlledCarousel from "./componants/product/ControlledCarousel";
 import Header from "./componants/public/Nav.jsx";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
+import sofa from "./assets/leather-sofa.jpg";
 
 function SingleProduct() {
   let {productId} = useParams();
@@ -66,7 +67,11 @@ function SingleProduct() {
         <Row className="my-4"></Row>
         <Row>
           <Col>
-            {/* {item.images && <ControlledCarousel images={item.images} />}  */}
+            {/* {item.images && <ControlledCarousel images={item.images} />} */}
+            <img
+              src={sofa}
+              className="w-100"
+            />
           </Col>
           <Col>
             <h2>{item.name}</h2>
