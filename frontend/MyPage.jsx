@@ -31,7 +31,7 @@ function MyPage() {
     e.preventDefault();
     const firstname = document.querySelector("#firstname");
     const lastname = document.querySelector("#lastname");
-    const avatar = document.querySelector("#avatar");
+    // const avatar = document.querySelector("#avatar");
 
     const newUser = new FormData();
     newUser.append("email", currentUser.email);
@@ -44,14 +44,16 @@ function MyPage() {
       "lastname",
       lastname.value ? lastname.value : currentUser.lastname,
     );
-    newUser.append(
-      "avatar",
-      avatar.files[0] ? avatar.files[0] : currentUser.avatar,
-    );
+    // newUser.append(
+    //   "avatar",
+    //   avatar.files[0] ? avatar.files[0] : currentUser.avatar,
+    // );
 
-    console.log(newUser);
+    // console.log(newUser);
     axios
-      .put(`${REACT_APP_BACKEND_API}/api/user/${userExist.userId}`, newUser)
+      .put(`${REACT_APP_BACKEND_API}/api/user/${userExist.userId}`, newUser, {
+        withCredentials: true,
+      })
       .then((response) => response.data)
       .then((json) => {
         if (json.result === 200) {
@@ -75,7 +77,7 @@ function MyPage() {
                   className="me-auto"
                   style={{flexDirection: "column"}}
                 >
-                  <Nav.Link href="/">Profile</Nav.Link>
+                  <Nav.Link href="/my-page">Profile</Nav.Link>
                   <Nav.Link href={`/my-page/orders`}>Orders</Nav.Link>
                 </Nav>
               </Container>
@@ -109,11 +111,11 @@ function MyPage() {
                 id="lastname"
               />
 
-              <input
+              {/* <input
                 type="file"
                 className="mb-3"
                 id="avatar"
-              />
+              /> */}
               {/* {currentUser.avatar} */}
 
               <button

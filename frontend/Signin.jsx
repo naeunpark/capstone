@@ -62,7 +62,7 @@ function Signin() {
     <>
       <MainNav />
       <Container className="text-center py-5">
-        <Row className="py-5">
+        <Row className="pt-5">
           <Col>
             <h1>Sign in</h1>
           </Col>
@@ -75,13 +75,17 @@ function Signin() {
             <h2>{alertText}</h2>
           </Col>
         </Row>
-        <Row>
+        <Row className="pb-3">
           <Col>
             <TextField
               id="email"
               label="email"
-              variant="filled"
+              variant="standard"
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <FormControl
               sx={{m: 1, width: "25ch"}}
               variant="standard"
@@ -105,20 +109,29 @@ function Signin() {
                 }
               />
             </FormControl>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <Button
               variant="contained"
               id="signin-button"
               onClick={handleSubmit}
-              className="btn"
+              className="btn my-3"
+              style={{backgroundColor: "#BDA693"}}
             >
               Sign in
             </Button>
           </Col>
         </Row>
         <Row>
-          <Col>
-            {" "}
-            <Link to="/sign-up">Sing up</Link>
+          <Col className="pb-5">
+            <Link
+              to="/sign-up"
+              className="secondary-btn btn"
+            >
+              Sing up
+            </Link>
           </Col>
         </Row>
       </Container>

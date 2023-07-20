@@ -6,9 +6,16 @@
 
 :root {
     --primary-color: #BDA693;
+    --secondary-color: #9E7F66;
+    --third-color: #ece3cf;
 }
+
 .btn {
-    background-color: val(--primary-color);
+    background-color: var(--primary-color);
+}
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
 }
 a{
     text-decoration: none;
@@ -16,4 +23,26 @@ a{
 }
 .css-1bhi0za-MuiTypography-root-MuiLink-root {
     text-decoration: none;
+}
+
+.order-table-header{
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.order-table-item:nth-child(odd){
+    background-color: var(--third-color);
+}
+.product-card{
+    position: relative;
+}
+.category{
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 }

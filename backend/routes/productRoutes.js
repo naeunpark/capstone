@@ -15,8 +15,7 @@ router.post('/create', (req, res)=>{
 })
 
 router.put('/:id', (req, res) => {
-    console.log(req.body);
-    Controllers.productController.updateProduct(req.body, res);
+    Controllers.productController.updateProduct(req, res);
 })
 
 router.delete('/:id', (req, res) => {

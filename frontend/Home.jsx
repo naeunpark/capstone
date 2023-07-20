@@ -18,57 +18,80 @@ function Home() {
   const limitedProducts = products.slice(0,8);
   return (
     <>
-    <Header />
+      <Header />
       <img
         src={chair}
         className="w-100"
       />
       <Container>
-      <Row>
-        <Col className="text-center mt-5 mb-3">
-          <h2>Browse the Range</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Col>
-      </Row>
-      <Container fluid>
-      <Row className="text-center" >
-        <Col xs={12} md={4}>
-          <Link to="/shop?category=diningroom">
-          <Image className="w-100" src={dinning} rounded />
-          <h3>Dining Room</h3>
-          </Link>
-        </Col>
-        <Col xs={12} md={4}>
-        <Link to="/shop?category=bedroom">
-          <Image className="w-100" src={DrawerChair} rounded />
-          <h3>Bed Room</h3>
-          </Link>
-        </Col>
-        <Col xs={12} md={4}>
-          <Link to="/shop?category=livingroom">
-          <Image className="w-100" src={living} rounded />
-          <h3>Living Room</h3>
-          </Link>
-        </Col>
-      </Row>
+        <Row>
+          <Col className="text-center mt-5 mb-3">
+            <h2>Browse the Range</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Col>
+        </Row>
+        <Container fluid>
+          <Row className="text-center">
+            <Col
+              xs={12}
+              md={4}
+            >
+              <Link to="/shop?category=Diningroom">
+                <Image
+                  className="w-100"
+                  src={dinning}
+                  rounded
+                />
+                <h3>Dining Room</h3>
+              </Link>
+            </Col>
+            <Col
+              xs={12}
+              md={4}
+            >
+              <Link to="/shop?category=Bedroom">
+                <Image
+                  className="w-100"
+                  src={DrawerChair}
+                  rounded
+                />
+                <h3>Bed Room</h3>
+              </Link>
+            </Col>
+            <Col
+              xs={12}
+              md={4}
+            >
+              <Link to="/shop?category=Livingroom">
+                <Image
+                  className="w-100"
+                  src={living}
+                  rounded
+                />
+                <h3>Living Room</h3>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
       </Container>
-    </Container>
-      
-    <Container>
-<Row>
-        <Col className="text-center mt-5 mb-3">
-          <h2>Our Products</h2>
-        </Col>
-      </Row>
-      <Row>
-      {limitedProducts.map(product=>(
-            <ProductCard key={product.id} product={product}/>
-          ))}
-      </Row>
-    </Container>
 
+      <Container>
+        <Row>
+          <Col className="text-center mt-5 mb-3">
+            <h2>Our Products</h2>
+          </Col>
+        </Row>
+        <Row>
+          {limitedProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
+          ))}
+        </Row>
+      </Container>
     </>
-  )
+  );
 }
 
 export default Home

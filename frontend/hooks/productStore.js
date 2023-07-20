@@ -13,7 +13,8 @@ export const productsStore = {
             description: data.description,
             price: data.price,
             stock: data.stock,
-            categoryId: data.categoryId
+            categoryId: data.categoryId,
+            category: data.category
         }
         products = [...products, newProduct]
         emitChange()
@@ -39,7 +40,7 @@ function emitChange() {
 const api = REACT_APP_BACKEND_API;
 
 //Get Products from Product table
-axios.get(`${api}/api/product`)
+axios.get(`${api}/api/product`,{withCredentials:true})
     .then(response => response.data.data)
     .then(json => {json.forEach(item=>productsStore.addProduct(item))})
     .catch(error=> {throw error.message});

@@ -36,7 +36,7 @@ function OrderHistory() {
                   className="me-auto"
                   style={{flexDirection: "column"}}
                 >
-                  <Nav.Link href="/">Profile</Nav.Link>
+                  <Nav.Link href="/my-page">Profile</Nav.Link>
                   <Nav.Link href={`/my-page/orders`}>Orders</Nav.Link>
                 </Nav>
               </Container>
@@ -44,13 +44,16 @@ function OrderHistory() {
           </Col>
 
           <Col className="p-5">
-            <Row>
+            <Row className="order-table-header p-3">
               <Col>Order Number</Col>
               <Col>Date</Col>
               <Col>Status</Col>
             </Row>
             {orders.map((order) => (
-              <Row key={order.id}>
+              <Row
+                key={order.id}
+                className="order-table-item p-3"
+              >
                 <Col>{order.id}</Col>
                 <Col>{order.createdAt}</Col>
                 <Col>{order.orderStatus}</Col>

@@ -31,7 +31,6 @@ function Cart() {
                   id="checkOut"
                   className="btn"
                   to="/checkout"
-                  style={{backgroundColor: "#9D7B5F", border: "none"}}
                 >
                   Check out
                 </Link>

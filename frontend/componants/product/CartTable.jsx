@@ -19,8 +19,8 @@ function CartTable(props) {
       <Container>
         <Row>
           <Col>
-            <Container className="p-5 cart-table">
-              <Row>
+            <Container className="pt-5">
+              <Row className="order-table-header p-3">
                 {props.remove ? <Col></Col> : null}
                 <Col>Product</Col>
                 <Col>Unit Price</Col>
@@ -38,7 +38,7 @@ function CartTable(props) {
                 : ""}
               <Row
                 style={{textAlign: "right"}}
-                className="p-3"
+                className="p-3 order-table-header"
               >
                 <Col sm={10}>Total</Col>
                 <Col sm={2}>$ {total}</Col>

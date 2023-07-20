@@ -15,7 +15,7 @@ export default function ProductCard(props) {
       className="mb-4"
     >
       <Link href={`/shop/${props.product.id}`}>
-        <Card>
+        <Card className="product-card">
           <CardMedia
             component="img"
             alt={props.product.name}
@@ -29,7 +29,9 @@ export default function ProductCard(props) {
               component="div"
             >
               {props.product.name}
+              <span className="category">{props.product.category.name}</span>
             </Typography>
+
             <Typography
               gutterBottom
               variant="h6"

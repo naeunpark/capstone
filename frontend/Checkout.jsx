@@ -46,6 +46,7 @@ function Checkout() {
               qty: item.qty,
             };
 
+            // order item create
             axios
               .post(
                 `${REACT_APP_BACKEND_API}/api/order/item/create`,
@@ -55,6 +56,16 @@ function Checkout() {
               .then((response) => response.data)
               .then((data) => {
                 if (data.result === 200) {
+                  axios
+                    .put(
+                      `${REACT_APP_BACKEND_API}/api/product/${item.productId}`,
+                      {qty: item.qty},
+                      {withCredentials: true},
+                    )
+                    .then((response) => response.data)
+                    .then((data) => console.log(`Stock: ${data.data.stock}`));
+
+                  // inactive the cart once the order is placed.
                   axios
                     .put(
                       `${REACT_APP_BACKEND_API}/api/cart/${cartId}`,
@@ -156,7 +167,6 @@ function Checkout() {
           <button
             type="submit"
             className="btn"
-            style={{backgroundColor: "#9D7B5F", border: "none"}}
             onClick={handleSubmit}
           >
             Place an order

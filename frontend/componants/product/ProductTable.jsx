@@ -24,7 +24,7 @@ export default function ProductTable(props) {
 
   return (
     <>
-      <Row className="p-3">
+      <Row className="order-table-item p-3">
         {props.remove ? (
           <Col>
             <BsXSquare
