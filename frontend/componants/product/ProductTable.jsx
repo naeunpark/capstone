@@ -7,11 +7,10 @@ import axios from "axios";
 
 export default function ProductTable(props) {
   const cartProduct = props.product;
-  const cartId = localStorage.getItem("cartId");
 
   function handleRemove(product) {
     axios
-      .delete(`${REACT_APP_BACKEND_API}/api/cart/item/${cartId}`, {
+      .delete(`${REACT_APP_BACKEND_API}/api/cart/item/${cartProduct.id}`, {
         withCredentials: true,
       })
       .then((response) => {

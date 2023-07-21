@@ -27,7 +27,7 @@ function CartTable(props) {
                 <Col>Qty</Col>
                 <Col>Sub Total</Col>
               </Row>
-              {props.cartItems !== []
+              {props.cartItems != []
                 ? props.cartItems.map((item) => (
                     <ProductTable
                       key={item.id}

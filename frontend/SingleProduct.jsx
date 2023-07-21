@@ -103,7 +103,7 @@ function SingleProduct() {
         </Row>
       </Container>
       <Container>
-        <Row className="pb-5">
+        <Row className="py-5">
           <Col>
             <h3>Product Dedscription</h3>
             {item.description}
